@@ -1,34 +1,37 @@
 import { StyleSheet, Text, View } from 'react-native'
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react'
-import { TouchableOpacity } from 'react-native'
-import AddButton from './src/components/buttons/AddButton'
-import ConfirmButton from './src/components/buttons/ConfirmButton'
-import {NavigationContainer} from '@react-navigation/native'
+import TasksManager from './screens/authentication/TasksManager';
+import ConfirmButton from './src/components/buttons/ConfirmButton';
+import MainScreen from './screens/authentication/MainScreen';
+import AddTaskScreen from './screens/authentication/AddTaskScreen';
+
+
+const Stack = createNativeStackNavigator()
 
 const App = () => {
   return (
     <NavigationContainer>
-      <View style={styles.container}>
-        {/* <AddButton/> */}
-        <Text>To-do List</Text>
-        <ConfirmButton
-          title='Continue'
-          // onPress={() => navigation.navigate()}
-        />
-      </View>
+        <Stack.Navigator>
+            <Stack.Screen
+                name='MainScreen'
+                component={MainScreen}
+                options={{title: 'Welcome'}}
+            />
+            <Stack.Screen
+                name='TasksManager'
+                component={TasksManager}
+            />
+            <Stack.Screen
+              name='AddTask'
+              component={AddTaskScreen}
+            />
+        </Stack.Navigator>
     </NavigationContainer>
   )
 }
 
 export default App
 
-const styles = StyleSheet.create({
-  container: {
-    height: '100%',
-    width: '100%',
-    alignItems: 'center',
-    alignContent: 'center',
-    justifyContent: 'center',
-    borderWidth:1
-  },
-})
+

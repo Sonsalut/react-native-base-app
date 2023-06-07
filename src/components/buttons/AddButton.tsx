@@ -1,11 +1,19 @@
 import { View, StyleSheet, Text, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 
+interface AddButtonProps {
+  onPress?: () => void,
 
+}
 
-const AddButton = () => {
+const AddButton = ({
+  onPress
+}:AddButtonProps) => {
   return (
-    <TouchableOpacity style={styles.floatAddBtn}>
+    <TouchableOpacity 
+      style={styles.floatAddBtn}
+      onPress={onPress}
+    >
         <Image 
             source={require('../../assets/images/plus.png')}
             style={styles.plusBtn}
@@ -26,7 +34,7 @@ const styles = StyleSheet.create({
         height: 50,
         width: 50,
         borderRadius: 180,
-        borderWidth:1
+        // borderWidth:1
     }
 })
 
