@@ -7,7 +7,10 @@ const MainScreen = ({navigation}) => {
     <View style={styles.container}>
       <ConfirmButton
         title='next'
-        onPress={() => navigation.navigate('TasksManager')}
+        onPress={
+          // console.log('next')
+          () => navigation.navigate('TasksManager')
+        }
       />
     </View>
   )

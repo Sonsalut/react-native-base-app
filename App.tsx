@@ -26,6 +26,7 @@ const App = () => {
             <Stack.Screen
               name='AddTask'
               component={AddTaskScreen}
+              options={{title: 'What to do today?'}}
             />
         </Stack.Navigator>
     </NavigationContainer>
