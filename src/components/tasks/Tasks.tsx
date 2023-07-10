@@ -2,7 +2,8 @@ import { StyleSheet, Text, View } from 'react-native'
 import {RadioButton} from 'react-native-paper'
 import React from 'react'
 import ItemCheck from '../buttons/ItemCheck'
-
+import CheckBox from 'react-native-just-checkbox'
+// import CheckBox, { CheckBoxBase } from '@react-native-community/checkbox';
 interface TasksProp {
     text?: string,
 }
@@ -13,7 +14,8 @@ const Tasks = ({
   return (
     <View style={styles.taskView}>
         <View style={styles.iconView}>
-
+            {/* <CheckBox/> */}
+            <CheckBox/>
         </View>
         <Text style={styles.textStyle}>{text}</Text>
     </View>
@@ -36,11 +38,14 @@ const styles = StyleSheet.create({
     textStyle:{
         // borderWidth:1,
         alignSelf: 'center',
-        marginLeft: '5%',
+        // marginLeft: '5%',
         // fontSize: 
     },
     iconView: {
-        borderWidth:1,
-        width: '20%'
+        // borderWidth:1,
+        width: '15%',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginLeft: '2%'
     }
 })

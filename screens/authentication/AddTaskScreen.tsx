@@ -25,7 +25,9 @@ const AddTaskScreen = () => {
       />
       {
         taskItems.map((item) => {
-          return <Tasks text={item}/>
+          return (
+            <Tasks text={item}/>
+          )
         })
       }
       {/* <Tasks text={newTask} />

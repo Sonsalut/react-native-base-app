@@ -27,8 +27,8 @@ export default ConfirmButton
 
 const styles = StyleSheet.create({
     confirmBtn:{
-        width: '60%',
-        height: '8%',
+        width: 230,
+        height: 45,
         borderRadius: 30,
         backgroundColor: '#2D5672',
         alignItems: 'center',
